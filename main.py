@@ -1,6 +1,13 @@
 import requests
+from flask import Flask, request
 
-response = requests.get('http://jsonip.com')
-print(response.status_code)
+app = Flask(__name__)
 
-print(response.text)
+@app.route('/')
+def home():
+  response = requests.get('http://jsonip.com')
+  return response.status_code + response.text
+
+if __name__ == "__main__":
+    home()
+    app.run(host="0.0.0.0", port=80)
