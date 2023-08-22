@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
   response = requests.get('http://jsonip.com')
-  return response.status_code, response.text
+  return [response.status_code, response.text]
 
 if __name__ == "__main__":
     home()
