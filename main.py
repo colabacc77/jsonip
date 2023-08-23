@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+  return 'form.html'
+
+@app.route('/fo')
+def form():
   return render_template('form.html')
 
 @app.route('/form', methods=['POST'])
