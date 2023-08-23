@@ -9,7 +9,7 @@ def home():
 
 @app.route('/fo')
 def form():
-  return render_template('./form.html')
+  return render_template('form.html')
 
 @app.route('/form', methods=['POST'])
 def quiz_answers():
